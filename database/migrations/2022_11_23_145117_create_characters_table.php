@@ -16,6 +16,19 @@ return new class extends Migration
         Schema::create('characters', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->softDeletes();
+            $table->string('name');
+            $table->string('description');
+            $table->string('class');
+            $table->integer('magic');
+            $table->integer('strength');
+            $table->integer('agility');
+            $table->integer('inteligence');
+            $table->integer('pv');
+            $table->foreignIdFor(\App\Models\User::class, 'user_id')
+            ->constrained()
+            ->onUpdate('RESTRICT')
+            ->onDelete('RESTRICT');
         });
     }
 

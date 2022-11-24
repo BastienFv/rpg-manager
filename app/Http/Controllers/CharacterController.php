@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CharacterRequest;
+use App\Models\Character;
 use Illuminate\Http\Request;
 
 class CharacterController extends Controller
@@ -32,9 +34,11 @@ class CharacterController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        //
+    public function store(CharacterRequest $request)
+    {   
+        Character::create($request->toArray());
+
+        return redirect()->route('characters.index');
     }
 
     /**

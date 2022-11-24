@@ -20,12 +20,13 @@ return new class extends Migration
             $table->string('name');
             $table->string('description');
             $table->string('class');
-            $table->integer('magic');
-            $table->integer('strength');
-            $table->integer('agility');
-            $table->integer('inteligence');
-            $table->integer('pv');
+            $table->integer('magic')->default(random_int(0, 14));
+            $table->integer('strength')->default(random_int(0, 14));
+            $table->integer('agility')->default(random_int(0, 14));
+            $table->integer('inteligence')->default(random_int(0, 14));
+            $table->integer('pv')->default(random_int(20, 50));
             $table->foreignIdFor(\App\Models\User::class, 'user_id')
+            ->nullable()
             ->constrained()
             ->onUpdate('RESTRICT')
             ->onDelete('RESTRICT');

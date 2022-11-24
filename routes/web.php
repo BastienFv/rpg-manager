@@ -22,9 +22,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('/user', UserController::class);
-Route::resource('/character', CharacterController::class);
-Route::resource('/group', GroupController::class);
+Route::resource('/users', UserController::class);
+Route::resource('/characters', CharacterController::class);
+Route::resource('/groups', GroupController::class);
 
 Route::match(['get', 'post'], 'recrut', [RecrutController::class, 'recrut']);
 

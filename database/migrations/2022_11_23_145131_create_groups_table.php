@@ -19,8 +19,9 @@ return new class extends Migration
             $table->softDeletes();
             $table->string('name');
             $table->string('description');
-            $table->integer('people');
+            $table->integer('people')->default(0);
             $table->foreignIdFor(\App\Models\User::class, 'user_id')
+            ->nullable()
             ->constrained()
             ->onUpdate('RESTRICT')
             ->onDelete('RESTRICT');

@@ -12,11 +12,11 @@ class Group extends Model
     use SoftDeletes;
 
 
-    protected $fillable =[
+    protected $fillable = [
         'name',
         'description',
         'people',
-       ];
+    ];
 
     protected string $name;
     protected string $description;

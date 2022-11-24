@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- CSS only -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+        <link rel="stylesheet" href="../css/style.css">
         <title>@yield('title')</title>
     </head>
     <body>
@@ -20,7 +21,7 @@
                         <a class="nav-link active" aria-current="page" href="/home">HOME</a>
                         <a class="nav-link" href="{{ route('characters.index') }}">CHARACTERS</a>
                         <a class="nav-link" href="{{ route('groups.index') }}">GROUPS</a>
-                        <a class="nav-link" href="#">REGISTER</a>
+                        <a class="nav-link" href="{{ route('users.index') }}">REGISTER</a>
                     </div>
                 </div>
             </div>

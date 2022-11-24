@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\CharacterController;
+use App\Http\Controllers\GroupController;
+use App\Http\Controllers\RecrutController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +20,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::resource('/user', UserController::class);
+Route::resource('/character', CharacterController::class);
+Route::resource('/group', GroupController::class);
+
+Route::match(['get', 'post'], [RecrutController::class, 'recrut']);

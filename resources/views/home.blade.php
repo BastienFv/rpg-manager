@@ -1,4 +1,4 @@
-@extends('rpg.base')
+@extends('base')
 
 @section('title', 'RPG Manager')
 

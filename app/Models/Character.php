@@ -20,6 +20,7 @@ class Character extends Model
         'agility',
         'inteligence',
         'pv',
+        'user_id',
     ];
     
     protected string $name;

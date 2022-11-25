@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\CharacterRequest;
 use App\Models\Character;
 use Illuminate\Http\Request;
+use App\Models\User;
 
 class CharacterController extends Controller
 {
@@ -37,7 +38,7 @@ class CharacterController extends Controller
      * @param  \Illuminate\Http\CharacterRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(CharacterRequest $request)
+    public function store(CharacterRequest $request,User $user )
     {   
         $data = $request->toArray();
         $data['magic'] = random_int(0, 14);
@@ -45,7 +46,8 @@ class CharacterController extends Controller
         $data['agility'] = random_int(0, 14);
         $data['inteligence'] = random_int(0, 14);
         $data['pv'] = random_int(20, 50);
-
+        $data['user_id'] =  session('user')->id;
+       
 
         Character::create($data);
         

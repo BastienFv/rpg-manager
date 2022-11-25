@@ -15,17 +15,22 @@ class Character extends Model
         'name',
         'description',
         'class',
-       ];
+        'magic',
+        'strength',
+        'agility',
+        'inteligence',
+        'pv',
+    ];
     
-       protected string $name;
-       protected string $description;
-       protected string $class;
-       private int $magic;
-       private int $strength;
-       private int $agility;
-       private int $inteligence;
-       private int $pv;
-       private int $user_id;
+    protected string $name;
+    protected string $description;
+    protected string $class;
+    private int $magic;
+    private int $strength;
+    private int $agility;
+    private int $inteligence;
+    private int $pv;
+    private int $user_id;
 
 
 }

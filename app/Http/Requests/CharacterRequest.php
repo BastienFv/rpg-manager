@@ -27,11 +27,6 @@ class CharacterRequest extends FormRequest
             'name' => 'required |string',
             'description' => 'required|string',
             'class' => 'required|string',
-            'magic' => 'int|min:0|max:14',
-            'strength' => 'int|min:0|max:14',
-            'agility' => 'int|min:0|max:14',
-            'intelligence' => 'int|min:0|max:14',
-            'pv' => 'int|min:20|max:50',
         ];
     }
 }

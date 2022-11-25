@@ -15,7 +15,10 @@ class CharacterController extends Controller
      */
     public function index()
     {
-        return view('characters.index');
+        return view('characters.index')
+        ->with([
+            'characters' => Character::all()
+        ]);
     }
 
     /**
@@ -36,8 +39,25 @@ class CharacterController extends Controller
      */
     public function store(CharacterRequest $request)
     {   
-        Character::create($request->toArray());
+        $data = $request->toArray();
+        $data['magic'] = random_int(0, 14);
+        $data['strength'] = random_int(0, 14);
+        $data['agility'] = random_int(0, 14);
+        $data['inteligence'] = random_int(0, 14);
+        $data['pv'] = random_int(20, 50);
 
+
+        Character::create($data);
+        
+        // $character = new Character();
+        // $character->fill($data);
+        // $character->magic = 0;
+        // $character->strength = 0;
+        // $character->agility = 0;
+        // $character->inteligence = 0;
+        // $character->pv = 0;
+        // $character->save();
+        
         return redirect()->route('characters.index');
     }
 

@@ -38,7 +38,7 @@ class CharacterController extends Controller
      * @param  \Illuminate\Http\CharacterRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(CharacterRequest $request,User $user )
+    public function store(CharacterRequest $request)
     {   
         $data = $request->toArray();
         $data['magic'] = random_int(0, 14);

@@ -39,7 +39,10 @@ class GroupController extends Controller
      */
     public function store(GroupRequest $request)
     {
-        Group::create($request->toArray());
+        $data = $request->toArray();
+        $data['user_id'] =  session('user')->id;
+
+        Group::create($data);
 
         return redirect()->route('groups.index');
     }

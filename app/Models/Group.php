@@ -16,6 +16,7 @@ class Group extends Model
         'name',
         'description',
         'people',
+        'user_id'
     ];
 
     protected string $name;

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Requests\UserRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+
 
 class RegisterController extends Controller
 {
@@ -15,16 +17,21 @@ class RegisterController extends Controller
             'register' => $register]);
     }
 
-    public function store(UserRequest $request)
+    public function store(UserRequest $request,User $user)
     {
 
-     
-        User::create($request->toArray());
-        
+        $user = new User();
+        $user->pseudo = $request->input('pseudo');
+        $user->lastname = $request->input('lastname');
+        $user->firstname = $request->input('firstname');
+        $user->email = $request->input('email');
+        $user->password =Hash::make($request->input('password'));
+        $user->save();
+        session(['user' => $user]);
 
         return redirect()
-            ->route('rpg.register')
-            ->with('success', 'Compte créé');
+            ->route('login')
+            ->with('success', 'ok');
     }
 
 

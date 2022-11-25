@@ -21,20 +21,15 @@
                         <a class="nav-link" href="/home">HOME</a>
                         <a class="nav-link" href="{{ route('characters.index') }}">CHARACTERS</a>
                         <a class="nav-link" href="{{ route('groups.index') }}">GROUPS</a>
-                        <a class="nav-link" href="{{ route('users.index') }}">REGISTER</a>
+                        @if(session()->has('user'))
+          <a href="{{ route('logout') }}" class="btn btn-outline-light me-2">Deconnexion</a>
+          @else
+          <a class="nav-link" href="{{ route('rpg.register') }}">REGISTER</a>
+          <a href="{{ route('login') }}" class="btn btn-outline-light me-2">Login</a>
+          @endif
                     </div>
-                </div>
-                <form class="row g-3">
-                    <div class="col-4">
-                      <input type="email" class="form-control" id="inputPassword2" placeholder="Email">
-                    </div>
-                    <div class="col-4">
-                      <input type="password" class="form-control" id="inputPassword2" placeholder="Password">
-                    </div>
-                    <div class="col-3">
-                      <button type="submit" class="btn btn-primary mb-3">Sign-in</button>
-                    </div>
-                </form>
+                </div> 
+              
             </div>
         </nav>
 

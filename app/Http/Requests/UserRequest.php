@@ -6,6 +6,7 @@ use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rules\Password;
 
 
+
 class UserRequest extends FormRequest
 {
     /**
@@ -26,7 +27,6 @@ class UserRequest extends FormRequest
     public function rules()
     {
         return [
-            
                 'email' => 'required|string',
                 'password' => Password::min(8)
                     ->mixedCase()
@@ -36,8 +36,6 @@ class UserRequest extends FormRequest
                 'firstname' => 'required|string',
                 'lastname' => 'required|string',
                 'pseudo' => 'required|string',
-                
-            
         ];
         
     }

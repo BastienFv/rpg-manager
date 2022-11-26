@@ -28,7 +28,9 @@ class GroupController extends Controller
      */
     public function create()
     {
+
         return view('groups.create');
+
     }
 
     /**
@@ -53,9 +55,13 @@ class GroupController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Group $group)
     {
-        //
+        
+        return view('groups.show')->with([
+            'group' => Group::where('user_id', session('user')->id)->get()
+        ]);
+        
     }
 
     /**

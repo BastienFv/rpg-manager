@@ -6,6 +6,7 @@ use App\Http\Requests\CharacterRequest;
 use App\Models\Character;
 use Illuminate\Http\Request;
 use App\Models\User;
+use SebastianBergmann\Diff\Chunk;
 
 class CharacterController extends Controller
 {
@@ -29,10 +30,9 @@ class CharacterController extends Controller
      */
     public function create()
     {
-        if (isset(session('user')->id)) {
-            view('characters.create');
-        }
-        return redirect()->route('login');
+        
+        return view('characters.create');
+
     }
 
     /**
@@ -74,12 +74,9 @@ class CharacterController extends Controller
      */
     public function show(Character $character)
     {
-        if (isset(session('user')->id)) {
-            view('characters.show')->with([
-                'character' => Character::where('user_id', session('user')->id)->get()
-            ]);
-        }
-        return redirect()->route('login');
+        return view('characters.show')->with([
+            'character' => Character::where('user_id', session('user')->id)->get()
+        ]); 
     }
 
     /**
@@ -88,9 +85,11 @@ class CharacterController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Character $character)
     {
-        //
+        return view('characters.edit')->with([
+            'character' => $character
+        ]);
     }
 
     /**
@@ -100,9 +99,12 @@ class CharacterController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(CharacterRequest $request, Character $character)
     {
-        //
+        $character->fill($request->toArray());
+        $character->save();
+
+        return redirect()->route('characters.index');
     }
 
     /**
@@ -111,8 +113,10 @@ class CharacterController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Character $character)
     {
-        //
+        $character->delete();
+
+        return redirect()->route('characters.index');
     }
 }

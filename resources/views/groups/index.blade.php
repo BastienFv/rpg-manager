@@ -6,6 +6,9 @@
 
     <h1>All Groups</h1>
 
+    <a href="{{ route('characters.create') }}" class="btn btn-primary">Create</a>
+    <a href="" class="btn btn-primary">My groups</a>
+    
     <table class="table table-dark table-striped">
         <thead>
             <tr>

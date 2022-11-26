@@ -23,7 +23,13 @@
                     <p class="card-text">{{ $item->agility }}</p>
                     <p class="card-text">{{ $item->inteligence }}</p>
                     <p class="card-text">{{ $item->pv }}</p>
-                    <div class="d-flex justify-content-between align-items-center">                   
+                    <div class="d-flex justify-content-between align-items-center">
+                        <a href="{{ route('characters.edit', $item->id) }}" class="btn btn-primary">Edit</a>
+                        <form method="post" action="{{ route('characters.destroy', $item->id) }}">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-sm btn-outline-danger">Delete</button>
+                        </form>                 
                     </div>
                 </div>
             </div>

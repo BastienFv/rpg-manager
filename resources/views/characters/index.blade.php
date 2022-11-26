@@ -6,11 +6,11 @@
 
 <h1>All Characters</h1>
 
+
 <div class="container">
     @if(session()->has('user'))
     <h1>Salut {{ session('user')->pseudo }}</h1>
     @endif
-
     <a href="{{ route('characters.create') }}" class="btn btn-primary">Create</a>
     <a href="{{ route('characters.show', $characters[0]->user_id) }}" class="btn btn-primary">My characters</a>
 

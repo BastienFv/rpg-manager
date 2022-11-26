@@ -29,7 +29,10 @@ class CharacterController extends Controller
      */
     public function create()
     {
-        return view('characters.create');
+        if (isset(session('user')->id)) {
+            view('characters.create');
+        }
+        return redirect()->route('login');
     }
 
     /**
@@ -71,9 +74,12 @@ class CharacterController extends Controller
      */
     public function show(Character $character)
     {
-        return view('characters.show')->with([
-            'character' => Character::where('user_id', session('user')->id)->get()
-        ]);
+        if (isset(session('user')->id)) {
+            view('characters.show')->with([
+                'character' => Character::where('user_id', session('user')->id)->get()
+            ]);
+        }
+        return redirect()->route('login');
     }
 
     /**

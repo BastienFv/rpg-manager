@@ -50,6 +50,6 @@ class LoginController extends Controller
     public function logout(){
 
         session()->forget('user');
-        return redirect()->route('login')->with('success','vous êtes deconecté');
+        return redirect()->route('login')->with('success','Vous êtes deconnecté, A Bientôt');
     }
 }

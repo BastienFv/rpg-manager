@@ -10,6 +10,10 @@
     @if(session()->has('user'))
     <h1>Salut {{ session('user')->pseudo }}</h1>
     @endif
+
+    <a href="{{ route('characters.create') }}" class="btn btn-primary">Create</a>
+    <a href="{{ route('characters.show', $characters[0]->user_id) }}" class="btn btn-primary">My characters</a>
+
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
         @foreach($characters as $character)
         <div class="col">
@@ -24,17 +28,19 @@
                     <p class="card-text">{{ $character->agility }}</p>
                     <p class="card-text">{{ $character->inteligence }}</p>
                     <p class="card-text">{{ $character->pv }}</p>
-                    <div class="d-flex justify-content-between align-items-center">
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                            <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                        </div>
+                    <div class="d-flex justify-content-between align-items-center">                   
                     </div>
                 </div>
             </div>
         </div>
+
+        
+
         @endforeach
     </div>
-</div>    
+</div>   
+
+<br />
+
 
 @endsection

@@ -43,4 +43,5 @@ Route::resource('/users', UserController::class);
 Route::resource('/characters', CharacterController::class);
 Route::resource('/groups', GroupController::class);
 
-Route::match(['get', 'post'], 'recrut', [RecrutController::class, 'recrut']); 
+Route::match(['get', 'post'], 'recrut', [RecrutController::class, 'recrut']);
+

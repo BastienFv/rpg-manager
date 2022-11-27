@@ -5,9 +5,14 @@
 @section('content')
 
 <h1>All Groups</h1>
-<a href="{{ route('groups.create') }}" class="btn btn-primary">Create</a>
-<a href="{{ route('groups.show', $groups[0]->user_id) }}" class="btn btn-primary">My groups</a>
 
+@if(session()->has('user'))
+    <h1>Salut {{ session('user')->pseudo }}</h1>
+
+    <a href="{{ route('groups.create') }}" class="btn btn-primary">Create</a>
+    <a href="{{ route('groups.show', $groups[0]->user_id) }}" class="btn btn-primary">My groups</a>
+
+@endif
     
     <table class="table table-dark table-striped">
         <thead>

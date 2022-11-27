@@ -10,11 +10,11 @@
 <div class="container">
     @if(session()->has('user'))
     <h1>Salut {{ session('user')->pseudo }}</h1>
-    @endif
     
     <a href="{{ route('characters.create') }}" class="btn btn-primary">Create</a>
-
+    
     <a href="{{ route('characters.show', $characters['0']->user_id) }}" class="btn btn-primary">My characters</a>
+    @endif
 
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
         @foreach($characters as $character)

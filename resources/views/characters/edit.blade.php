@@ -29,7 +29,6 @@
             <option value="Archer">Archer</option>
         </select>
         
-
         <button type="submit" class="btn btn-primary">Update</button>
 
     </form>

@@ -51,7 +51,6 @@ class CharacterController extends Controller
         $data['pv'] = random_int(20, 50);
         $data['user_id'] =  session('user')->id;
        
-
         Character::create($data);
         
         // $character = new Character();

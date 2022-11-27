@@ -33,8 +33,32 @@
             <option value="Berserker">Berserker</option>
             <option value="Archer">Archer</option>
         </select>
-        
 
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Magic</label>
+            <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="Magic" name="magic" readonly>
+        </div>
+
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Strength</label>
+            <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="Strength" name="strength" readonly>
+        </div>
+
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Agility</label>
+            <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="Agility" name="agility" readonly>
+        </div>
+
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Inteligence</label>
+            <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="Inteligence" name="inteligence" readonly>
+        </div>
+
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">PV</label>
+            <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="PV" name="pv" readonly>
+        </div>
+        
         <button type="submit" class="btn btn-primary">Create</button>
 
     </form>

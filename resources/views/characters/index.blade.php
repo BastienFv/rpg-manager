@@ -13,10 +13,9 @@
     
     <a href="{{ route('characters.create') }}" class="btn btn-primary">Create</a>
     
-    <a href="{{ route('characters.show', $characters['0']->user_id) }}" class="btn btn-primary">My characters</a>
     
     @endif
-
+    
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
         @foreach($characters as $character)
         <div class="col">
@@ -26,19 +25,15 @@
                     <p class="card-text">{{ $character->name }}</p>
                     <p class="card-text">{{ $character->description }}</p>
                     <p class="card-text">{{ $character->class }}</p>
-                    <p class="card-text">{{ $character->magic }}</p>
-                    <p class="card-text">{{ $character->strength }}</p>
-                    <p class="card-text">{{ $character->agility }}</p>
-                    <p class="card-text">{{ $character->inteligence }}</p>
-                    <p class="card-text">{{ $character->pv }}</p>
-                    <div class="d-flex justify-content-between align-items-center">                   
+                    <div class="d-flex justify-content-between align-items-center">  
                     </div>
+                    <a href="{{ route('characters.show', $character->id) }}" class="btn btn-primary">View </a>
                 </div>
             </div>
         </div>
-
         
-
+        
+        
         @endforeach
     </div>
 </div>   

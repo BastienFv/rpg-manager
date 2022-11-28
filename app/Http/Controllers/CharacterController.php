@@ -16,7 +16,6 @@ class CharacterController extends Controller
      */
     public function index()
     {
-        
         return view('characters.index')
         ->with([
             'characters' => Character::all()
@@ -30,9 +29,7 @@ class CharacterController extends Controller
      */
     public function create()
     {
-        
         return view('characters.create');
-
     }
 
     /**
@@ -51,6 +48,7 @@ class CharacterController extends Controller
         $data['pv'] = random_int(20, 50);
         $data['user_id'] =  session('user')->id;
        
+
         Character::create($data);
         
         // $character = new Character();
@@ -74,8 +72,8 @@ class CharacterController extends Controller
     public function show(Character $character)
     {
         return view('characters.show')->with([
-            'character' => Character::where('user_id', session('user')->id)->get()
-        ]); 
+            'character' => $character
+        ]);
     }
 
     /**

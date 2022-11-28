@@ -15,24 +15,26 @@
                 <th>Max People</th>
             </tr>
             <tbody>
-            @foreach($group as $item)
+           
                 <tr class="table-stripped">
-                    <td>{{ $item->id }}</td>
-                    <td>{{ $item->name }}</td>
-                    <td>{{ $item->description }}</td>
-                    <td>{{ $item->people }}</td>
+                    <td>{{ $group->id }}</td>
+                    <td>{{ $group->name }}</td>
+                    <td>{{ $group->description }}</td>
+                    <td>{{ $group->people }}</td>
                     <td>
                     <div class="d-flex justify-content-between align-items-center">
-                        <a href="{{ route('groups.edit', $item->id) }}" class="btn btn-sm btn-primary">Edit</a>
-                        <form method="post" action="{{ route('groups.destroy', $item->id) }}">
+                        @if(session('user')->id === $group->user_id)
+                        <a href="{{ route('groups.edit', $group->id) }}" class="btn btn-sm btn-primary">Edit</a>
+                        <form method="post" action="{{ route('groups.destroy', $group->id) }}">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-sm btn-danger">Delete</button>
-                        </form>                 
+                        </form>          
+                    @endif       
                     </div>
                     </td>
                 </tr>
-            @endforeach
+            
             </tbody>
         </thead>
     </table>

@@ -10,7 +10,6 @@
     <h1>Salut {{ session('user')->pseudo }}</h1>
 
     <a href="{{ route('groups.create') }}" class="btn btn-primary">Create</a>
-    <a href="{{ route('groups.show', $groups[0]->user_id) }}" class="btn btn-primary">My groups</a>
 
 @endif
     
@@ -30,6 +29,8 @@
                     <td>{{ $group->description }}</td>
                     <td>{{ $group->people }}</td>
                 </tr>
+
+    <a href="{{ route('groups.show', $group->id) }}" class="btn btn-primary">My groups </a>
             @endforeach
             </tbody>
         </thead>

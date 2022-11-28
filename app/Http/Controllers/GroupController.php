@@ -59,7 +59,7 @@ class GroupController extends Controller
     {
         
         return view('groups.show')->with([
-            'group' => Group::where('user_id', session('user')->id)->get()
+            'group' => $group
         ]);
         
     }

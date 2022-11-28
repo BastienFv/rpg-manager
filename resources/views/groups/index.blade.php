@@ -7,11 +7,11 @@
 <h1>All Groups</h1>
 
 @if(session()->has('user'))
-    <h1>Salut {{ session('user')->pseudo }}</h1>
 
-    <a href="{{ route('groups.create') }}" class="btn btn-primary">Create</a>
+    <h1>Bonjour {{ session('user')->pseudo }}</h1>
 
 @endif
+
     
     <table class="table table-dark table-striped">
         <thead>
@@ -28,9 +28,13 @@
                     <td>{{ $group->name }}</td>
                     <td>{{ $group->description }}</td>
                     <td>{{ $group->people }}</td>
+                    @if(session()->has('user'))
+                    <td>
+                        <a href="{{ route('groups.show', $group->id) }}" class="btn btn-primary">View</a>
+                    </td>
+                    @endif
                 </tr>
 
-    <a href="{{ route('groups.show', $group->id) }}" class="btn btn-primary">My groups </a>
             @endforeach
             </tbody>
         </thead>

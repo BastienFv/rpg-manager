@@ -29,7 +29,7 @@
             <input type="number" class="form-control" id="exampleFormControlInput1" name="people" placeholder="People">
         </div>
         
-        <button type="submit" class="btn btn-primary">Create</button>
+        <button type="submit" class="btn btn-primary">Update</button>
     </form>
 
 @endsection

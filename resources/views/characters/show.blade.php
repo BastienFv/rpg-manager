@@ -5,10 +5,15 @@
 @section('content')
     <h1>My characters</h1>
 
-    <div class="container">
     @if(session()->has('user'))
+    
     <h1>Salut {{ session('user')->pseudo }}</h1>
+    
     @endif
+    
+    
+    <div class="container">
+
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
      
         <div class="col">

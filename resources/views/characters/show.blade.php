@@ -25,6 +25,11 @@
                     <p class="card-text">{{ $item->pv }}</p>
                     <div class="d-flex justify-content-between align-items-center">
                         <a href="{{ route('characters.edit', $item->id) }}" class="btn btn-sm btn-primary">Edit</a>
+                        <form method="post" action="{{ route('characters.level', $item->id) }}">
+                            @csrf
+                            @method('PUT')
+                            <button type="submit" class="btn btn-sm btn-success">Level up</button>
+                        </form> 
                         <form method="post" action="{{ route('characters.destroy', $item->id) }}">
                             @csrf
                             @method('DELETE')

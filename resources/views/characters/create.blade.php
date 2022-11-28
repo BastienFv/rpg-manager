@@ -59,6 +59,12 @@
             <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="PV" name="pv" readonly>
         </div>
         
+        <form action="{{ route('characters.regenerate') }}" method="get">
+            @csrf
+
+            <button type="submit" class="btn btn-success">Regenerate</button>
+        </form>
+
         <button type="submit" class="btn btn-primary">Create</button>
 
     </form>

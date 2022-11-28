@@ -6,7 +6,6 @@ use App\Http\Requests\CharacterRequest;
 use App\Models\Character;
 use Illuminate\Http\Request;
 use App\Models\User;
-use SebastianBergmann\Diff\Chunk;
 
 class CharacterController extends Controller
 {
@@ -17,6 +16,7 @@ class CharacterController extends Controller
      */
     public function index()
     {
+        
         return view('characters.index')
         ->with([
             'characters' => Character::all()
@@ -117,5 +117,23 @@ class CharacterController extends Controller
         $character->delete();
 
         return redirect()->route('characters.index');
+    }
+
+    public function regenerate(CharacterRequest $request)
+    {
+
+    }
+
+    public function level(Character $character)
+    {
+        
+        $character->pv += 5;
+        $character->magic += random_int(0, 2);
+        $character->strength += random_int(0, 2);
+        $character->agility += random_int(0, 2);
+        $character->inteligence += random_int(0, 2);
+        $character->save();
+
+        return redirect()->back();
     }
 }

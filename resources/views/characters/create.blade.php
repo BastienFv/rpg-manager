@@ -3,9 +3,11 @@
 @section('title', 'RPG Manager')
 
 @section('content')
-@if(session()->has('user'))
-<h1>Salut {{ session('user')->id }}</h1>
-@endif
+
+    @if(session()->has('user'))
+        <h1>Salut {{ session('user')->id }}</h1>
+    @endif
+    
     <h1>Create a new character</h1>
         
     <form action="{{ route('characters.store') }}" method="post">

@@ -8,7 +8,7 @@
 
     @if(session()->has('user'))
     
-    <h1>Salut {{ session('user')->pseudo }}</h1>
+        <h1>Salut {{ session('user')->pseudo }}</h1>
     
     @endif
     

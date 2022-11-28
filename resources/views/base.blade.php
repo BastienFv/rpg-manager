@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="../css/style.css">
         <title>@yield('title')</title>
     </head>
+
     <body>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark"> 
             <div class="container-fluid">
@@ -20,22 +21,21 @@
                     <div class="navbar-nav">
                         <a class="nav-link" href="/home">HOME</a>
                         @if(session()->has('user'))
-                        <a class="nav-link" href="{{ route('characters.create') }}">NEW CHARACTER</a>
+                            <a class="nav-link" href="{{ route('characters.create') }}">NEW CHARACTER</a>
                         @endif
-                        <a class="nav-link" href="{{ route('characters.index') }}">CHARACTERS</a>
+                            <a class="nav-link" href="{{ route('characters.index') }}">CHARACTERS</a>
                         @if(session()->has('user'))
-                        <a class="nav-link" href="{{ route('groups.create') }}">NEW GROUP</a>
+                            <a class="nav-link" href="{{ route('groups.create') }}">NEW GROUP</a>
                         @endif
-                        <a class="nav-link" href="{{ route('groups.index') }}">GROUPS</a>
+                            <a class="nav-link" href="{{ route('groups.index') }}">GROUPS</a>
                         @if(session()->has('user'))
-          <a href="{{ route('logout') }}" class="btn btn-outline-light me-2">Deconnexion</a>
-          @else
-          <a class="nav-link" href="{{ route('rpg.register') }}">REGISTER</a>
-          <a href="{{ route('login') }}" class="btn btn-outline-light me-2">Login</a>
-          @endif
+                            <a href="{{ route('logout') }}" class="btn btn-outline-light me-2">Deconnexion</a>
+                        @else
+                            <a class="nav-link" href="{{ route('rpg.register') }}">REGISTER</a>
+                            <a href="{{ route('login') }}" class="btn btn-outline-light me-2">Login</a>
+                        @endif
                     </div>
                 </div> 
-              
             </div>
         </nav>
 

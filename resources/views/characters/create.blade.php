@@ -60,13 +60,9 @@
             <label for="exampleFormControlInput1" class="form-label">PV</label>
             <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="PV" name="pv" value="{{ random_int(20, 50) }}">
         </div>
+
+        <button type="submit" class="btn btn-success">Regenerate</button>
         
-        <form action="{{ route('characters.regenerate') }}" method="get">
-            @csrf
-
-            <button type="submit" class="btn btn-success">Regenerate</button>
-        </form>
-
         <button type="submit" class="btn btn-primary">Create</button>
 
     </form>

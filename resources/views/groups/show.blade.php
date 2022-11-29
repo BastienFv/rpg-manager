@@ -45,19 +45,17 @@
                         {{-- <a href="{{route('groups.join',$group->id)  }}" class="btn btn-sm btn-primary">Invite</a> --}}
                         @endif
                         @if(auth()->user()->id === $group->user_id)
-                        <a href="{{ route('groups.edit', $group->id) }}" class="btn btn-sm btn-primary">Edit</a>
-                        <form method="post" action="{{ route('groups.destroy', $group->id) }}">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="btn btn-sm btn-danger">Delete</button>
-                        </form>          
-                    @endif       
+                            <a href="{{ route('groups.edit', $group->id) }}" class="btn btn-sm btn-primary">Edit</a>
+                            <form method="post" action="{{ route('groups.destroy', $group->id) }}">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                            </form>    
+                        @endif       
                     </div>
-                    </td>
-                </tr>
-            
-            </tbody>
-        </thead>
+                </td>
+            </tr>
+        </tbody>
     </table>
 
 @endsection

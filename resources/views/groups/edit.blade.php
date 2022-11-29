@@ -7,6 +7,7 @@
     <h1>Edit group</h1>
 
     <form action="{{ route('groups.update', $group->id) }}" method="post">
+
         @csrf
         @method('PUT')
         
@@ -30,6 +31,6 @@
         </div>
         
         <button type="submit" class="btn btn-primary">Update</button>
-    </form>
 
+    </form>
 @endsection

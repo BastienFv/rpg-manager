@@ -7,6 +7,7 @@
     <h1>Create a new group</h1>
 
     <form action="{{ route('groups.store') }}" method="post">
+        
         @csrf
         @if ($errors->any())
             @foreach ($errors->all() as $error)
@@ -28,6 +29,6 @@
         </div>
         
         <button type="submit" class="btn btn-primary">Create</button>
-    </form>
 
+    </form>
 @endsection

@@ -101,7 +101,7 @@ class CharacterController extends Controller
         $character->fill($request->toArray());
         $character->save();
 
-        return redirect()->route('characters.show');
+        return redirect()->route('characters.index');
     }
 
     /**

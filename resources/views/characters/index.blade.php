@@ -21,7 +21,7 @@
                             <div class="d-flex justify-content-between align-items-center">  
                             </div>
                             @if(auth()->check())
-                                <a href="{{ route('characters.show', $character->id) }}" class="btn btn-primary">View </a>
+                                <a href="{{ route('characters.show', $character->id) }}" class="btn btn-primary">View</a>
                             @endif
                         </div>
                     </div>

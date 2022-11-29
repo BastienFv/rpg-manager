@@ -41,11 +41,11 @@ class CharacterController extends Controller
     public function store(CharacterRequest $request)
     {   
         $data = $request->toArray();
-        // $data['magic'] = random_int(0, 14);
-        // $data['strength'] = random_int(0, 14);
-        // $data['agility'] = random_int(0, 14);
-        // $data['inteligence'] = random_int(0, 14);
-        // $data['pv'] = random_int(20, 50);
+        $data['magic'] = random_int(0, 14);
+        $data['strength'] = random_int(0, 14);
+        $data['agility'] = random_int(0, 14);
+        $data['inteligence'] = random_int(0, 14);
+        $data['pv'] = random_int(20, 50);
         $data['user_id'] =  auth()->user()->id;
        
 
@@ -101,7 +101,7 @@ class CharacterController extends Controller
         $character->fill($request->toArray());
         $character->save();
 
-        return redirect()->route('characters.index');
+        return redirect()->route('characters.show');
     }
 
     /**
@@ -117,7 +117,7 @@ class CharacterController extends Controller
         return redirect()->route('characters.index');
     }
 
-    public function regenerate(CharacterRequest $request, Character $character)
+    public function regenerate(Character $character)
     {
         $character->magic = random_int(0, 14);
         $character->strength = random_int(0, 14);
@@ -125,8 +125,9 @@ class CharacterController extends Controller
         $character->inteligence = random_int(0, 14);
         $character->pv = random_int(20, 50);
 
-        $character->fill($request->toArray());
         $character->save();
+
+        return redirect()->back();
     }
 
     public function level(Character $character)

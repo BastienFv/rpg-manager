@@ -46,7 +46,7 @@ class LoginController extends Controller
             return redirect()->route('profil');
         }
 
-        return redirect("login")->withErrors(['Email inconnue'])->withInput(); 
+        return redirect("login")->withErrors(['Email/mot de passe inconnu'])->withInput(); 
        
     }
 

@@ -8,11 +8,13 @@
 
     @if(auth()->check())
     
-        <h1>Salut {{ auth()->user()->pseudo }}</h1>
+    <h1>Salut {{ auth()->user()->pseudo }}</h1> 
     
     @endif
-
-    <div id="carouselExampleDark" class="carousel carousel-dark slide w-50" data-bs-ride="carousel">
+    
+    <div class="row justify-content-center">
+    
+    <div id="carouselExampleDark" class="carousel carousel-dark slide w-50  " data-bs-ride="carousel">
         <div class="carousel-indicators">
           <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
           <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -30,13 +32,13 @@
             <img src="https://pbs.twimg.com/media/DaHWJ-5W4AAQ2t6.jpg" class="d-block w-100" alt="...">
             <div class="carousel-caption d-none d-md-block bg-white text-dark">
               <h5>Créer ton personnage</h5>
-              <p>Choisis sa classe et n'hésites pas à le faire monter en niveau !</p>
+              <p>Choisis sa classe et montes en niveau !</p>
             </div>
           </div>
           <div class="carousel-item">
             <img src="https://o.aolcdn.com/hss/storage/midas/e81f1ef7b465c7b7b7911ba46788d82a/200580049/wow-partyfinder-epl-813.jpg" class="d-block w-100" alt="...">
             <div class="carousel-caption d-none d-md-block bg-white text-dark">
-              <h5>Rejoignez un groupe pour vos quêtes</h5>
+              <h5>Rejoignez le raid pour la victoire</h5>
               <p>Unissez vous pour la bataille</p>
             </div>
           </div>
@@ -50,5 +52,5 @@
           <span class="visually-hidden">Next</span>
         </button>
       </div>
-    
+    </div>
 @endsection

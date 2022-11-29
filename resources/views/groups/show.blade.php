@@ -16,30 +16,28 @@
                 <th>Members</th>
                 <th></th>
             </tr>
-            <tbody>
-           
-                <tr class="table-stripped">
-                    <td>{{ $group->id }}</td>
-                    <td>{{ $group->name }}</td>
-                    <td>{{ $group->description }}</td>
-                    <td>{{ $group->people }}</td>
-                    <td></td>
-                    <td>
+        </thead>
+        <tbody>
+            <tr class="table-stripped">
+                <td>{{ $group->id }}</td>
+                <td>{{ $group->name }}</td>
+                <td>{{ $group->description }}</td>
+                <td>{{ $group->people }}</td>
+                <td></td>
+                <td>
                     <div class="d-flex justify-content-between align-items-center">
                         @if(auth()->user()->id === $group->user_id)
-                        <a href="{{ route('groups.edit', $group->id) }}" class="btn btn-sm btn-primary">Edit</a>
-                        <form method="post" action="{{ route('groups.destroy', $group->id) }}">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="btn btn-sm btn-danger">Delete</button>
-                        </form>          
-                    @endif       
+                            <a href="{{ route('groups.edit', $group->id) }}" class="btn btn-sm btn-primary">Edit</a>
+                            <form method="post" action="{{ route('groups.destroy', $group->id) }}">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                            </form>    
+                        @endif       
                     </div>
-                    </td>
-                </tr>
-            
-            </tbody>
-        </thead>
+                </td>
+            </tr>
+        </tbody>
     </table>
 
 @endsection

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\GroupRequest;
+use App\Models\Character;
 use App\Models\Group;
 use Illuminate\Http\Request;
 
@@ -59,9 +60,18 @@ class GroupController extends Controller
     {
         
         return view('groups.show')->with([
-            'group' => $group
+            'group' => $group,
+            'character' => Character::where('user_id',auth()->user()->id)->get()
         ]);
         
+    }
+    public function join(GroupRequest $request,Group $group, Character $character)
+    {
+        $group->fill($request->toArray());
+        $group['character_id'] =  $character->id;
+        $group->save();
+
+        return redirect()->route('groups.index');
     }
 
     /**

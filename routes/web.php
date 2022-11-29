@@ -43,7 +43,7 @@ Route::resource('/users', UserController::class);
 Route::resource('/characters', CharacterController::class);
 Route::resource('/groups', GroupController::class);
 
-Route::match(['get', 'post'], 'recrut', [RecrutController::class, 'recrut']);
+Route::resource('/recrut',RecrutController::class);
 
 Route::put('/characters/{character}/regenerate', [CharacterController::class, 'regenerate'])->name('characters.regenerate');
 

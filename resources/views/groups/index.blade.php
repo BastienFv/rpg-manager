@@ -6,11 +6,7 @@
 
     <h1>All Groups</h1>
 
-    @if(auth()->check())
-
-        <h1>Bonjour {{ auth()->user()->pseudo }}</h1>
-
-    @endif
+  
 
     
     <table class="table table-dark table-striped">
@@ -35,6 +31,7 @@
                     @if(auth()->check())
                     <td>
                         <a href="{{ route('groups.show', $group->id) }}" class="btn btn-primary">View</a>
+                
                     </td>
 
                     @endif

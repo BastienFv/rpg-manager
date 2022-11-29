@@ -7,10 +7,6 @@
 
     @if(auth()->check())
     
-        <h1>Salut {{ auth()->user()->pseudo }}</h1>
-    
-    @endif
-    
     
     <div class="container">
 
@@ -39,7 +35,6 @@
 
                                 <a href="{{ route('characters.edit', $character->id) }}" class="btn btn-sm btn-primary">Edit</a>
 
-                                <a href="{{ route('characters.edit', $character->id) }}" class="btn btn-sm btn-primary">Invite</a>
 
                                 <form method="post" action="{{ route('characters.level', $character->id) }}">
                                     @csrf
@@ -59,4 +54,5 @@
             </div>
         </div>
     </div>   
+    @endif
 @endsection

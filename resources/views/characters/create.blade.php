@@ -5,8 +5,7 @@
 @section('content')
 
     @if(auth()->check())
-        <h1>Salut {{ auth()->user()->id }}</h1>
-    @endif
+ 
     
     <h1>Create a new character</h1>
         
@@ -63,5 +62,5 @@
         
         <button type="submit" class="btn btn-primary">Create</button>
     </form>
-
+@endif
 @endsection

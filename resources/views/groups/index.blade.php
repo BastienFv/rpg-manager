@@ -6,9 +6,9 @@
 
     <h1>All Groups</h1>
 
-    @if(session()->has('user'))
+    @if(auth()->check())
 
-        <h1>Bonjour {{ session('user')->pseudo }}</h1>
+        <h1>Bonjour {{ auth()->user()->pseudo }}</h1>
 
     @endif
 
@@ -20,6 +20,7 @@
                 <th>Name</th>
                 <th>Description</th>
                 <th>Max People</th>
+                <th></th>
             </tr>
         </thead>
 
@@ -31,7 +32,7 @@
                     <td>{{ $group->description }}</td>
                     <td>{{ $group->people }}</td>
 
-                    @if(session()->has('user'))
+                    @if(auth()->check())
                     <td>
                         <a href="{{ route('groups.show', $group->id) }}" class="btn btn-primary">View</a>
                     </td>

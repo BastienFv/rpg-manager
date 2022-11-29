@@ -5,9 +5,9 @@
 @section('content')
     <h1>My characters</h1>
 
-    @if(session()->has('user'))
+    @if(auth()->check())
     
-        <h1>Salut {{ session('user')->pseudo }}</h1>
+        <h1>Salut {{ auth()->user()->pseudo }}</h1>
     
     @endif
     
@@ -28,8 +28,9 @@
                         <p class="card-text">{{ $character->inteligence }}</p>
                         <p class="card-text">{{ $character->pv }}</p>
                         <div class="d-flex justify-content-between align-items-center">
-                            @if(session('user')->id === $character->user_id)
+                            @if(auth()->user()->id === $character->user_id)
                             <a href="{{ route('characters.edit', $character->id) }}" class="btn btn-sm btn-primary">Edit</a>
+                            <a href="{{ route('characters.edit', $character->id) }}" class="btn btn-sm btn-success">Invite</a>
                             <form method="post" action="{{ route('characters.level', $character->id) }}">
                                 @csrf
                                 @method('PUT')
@@ -39,8 +40,8 @@
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-sm btn-danger">Delete</button>
-                                @endif              
                             </form>   
+                            @endif              
                         </div>
                     </div>
                 </div>

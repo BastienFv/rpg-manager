@@ -46,7 +46,7 @@ class CharacterController extends Controller
         // $data['agility'] = random_int(0, 14);
         // $data['inteligence'] = random_int(0, 14);
         // $data['pv'] = random_int(20, 50);
-        $data['user_id'] =  session('user')->id;
+        $data['user_id'] =  auth()->user()->id;
        
 
         Character::create($data);

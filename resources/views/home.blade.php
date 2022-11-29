@@ -6,9 +6,9 @@
 
     <h1>Home</h1>
 
-    @if(session()->has('user'))
+    @if(auth()->check())
     
-        <h1>Salut {{ session('user')->pseudo }}</h1>
+        <h1>Salut {{ auth()->user()->pseudo }}</h1>
     
     @endif
     

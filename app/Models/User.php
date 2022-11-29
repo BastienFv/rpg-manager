@@ -3,10 +3,10 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class User extends Model
+class User extends Authenticatable
 {
     use HasFactory;
     use SoftDeletes;
@@ -17,14 +17,9 @@ class User extends Model
     'firstname',
     'lastname',
     'pseudo',
-
    ];
 
-   protected string $email;
-   protected string $password;
-   protected string $firstname;
-   protected string $lastname;
-   protected string $pseudo;
-
-
+   protected $hidden = [
+    'password'
+   ];
 }

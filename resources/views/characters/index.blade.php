@@ -8,9 +8,9 @@
 
 
     <div class="container">
-        @if(session()->has('user'))
+        @if(auth()->check())
 
-            <h1>Salut {{ session('user')->pseudo }}</h1>
+            <h1>Salut {{ auth()->user()->pseudo }}</h1>
 
         @endif
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
@@ -24,7 +24,7 @@
                             <p class="card-text">{{ $character->class }}</p>
                             <div class="d-flex justify-content-between align-items-center">  
                             </div>
-                            @if(session()->has('user'))
+                            @if(auth()->check())
                                 <a href="{{ route('characters.show', $character->id) }}" class="btn btn-primary">View </a>
                             @endif
                         </div>

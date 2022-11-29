@@ -4,8 +4,8 @@
 
 @section('content')
 
-    @if(session()->has('user'))
-        <h1>Salut {{ session('user')->id }}</h1>
+    @if(auth()->check())
+        <h1>Salut {{ auth()->user()->id }}</h1>
     @endif
     
     <h1>Create a new character</h1>

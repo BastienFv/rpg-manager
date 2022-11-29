@@ -24,7 +24,7 @@
         </div>
         <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">People</label>
-            <input type="number" class="form-control" id="exampleFormControlInput1" name="people" placeholder="People">
+            <input type="number" class="form-control" id="exampleFormControlInput1" name="people" min="1" placeholder="People">
         </div>
         
         <button type="submit" class="btn btn-primary">Create</button>

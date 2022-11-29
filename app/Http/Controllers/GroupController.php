@@ -42,7 +42,7 @@ class GroupController extends Controller
     public function store(GroupRequest $request)
     {
         $data = $request->toArray();
-        $data['user_id'] =  session('user')->id;
+        $data['user_id'] =  auth()->user()->id;
 
         Group::create($data);
 

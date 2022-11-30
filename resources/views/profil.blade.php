@@ -7,10 +7,12 @@
 
 @if(auth()->check())
 @if(session()->has('success'))
+<br>
 <div class="alert alert-success">{{session()->get('success')}}</div>
 @endif
 <br>
 <h1>Salut {{ auth()->user()->pseudo }} !</h1>
+<br>
 <h2>Infos du compte : </h2>
 <label for="lastname">Nom : </label>
 <input class="form-control" type="text" name="lastname" value="{{ auth()->user()->lastname }}" aria-label="readonly input example" readonly>

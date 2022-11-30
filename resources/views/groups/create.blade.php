@@ -27,7 +27,7 @@
             <label for="exampleFormControlInput1" class="form-label">People</label>
             <input type="number" class="form-control" id="exampleFormControlInput1" name="people" min="1" placeholder="People">
         </div>
-        
+        <br>
         <button type="submit" class="btn btn-primary">Create</button>
 
     </form>

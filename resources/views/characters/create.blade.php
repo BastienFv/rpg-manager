@@ -37,27 +37,27 @@
 
         <!-- <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Magic</label>
-            <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="Magic" name="magic" value="{{ random_int(0, 14) }}">
+            <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="Magic" name="magic" value="{{-- {{ random_int(0, 14) }} --}}">
         </div>
 
         <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Strength</label>
-            <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="Strength" name="strength" value="{{ random_int(0, 14) }}">
+            <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="Strength" name="strength" value="{{-- {{ random_int(0, 14) }} --}}">
         </div>
 
         <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Agility</label>
-            <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="Agility" name="agility" value="{{ random_int(0, 14) }}">
+            <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="Agility" name="agility" value="{{-- {{ random_int(0, 14) }} --}}">
         </div>
 
         <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Inteligence</label>
-            <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="Inteligence" name="inteligence" value="{{ random_int(0, 14) }}">
+            <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="Inteligence" name="inteligence" value="{{-- {{ random_int(0, 14) }} --}}">
         </div>
 
         <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">PV</label>
-            <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="PV" name="pv" value="{{ random_int(20, 50) }}">
+            <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="PV" name="pv" value="{{-- {{ random_int(20, 50) }} --}}">
         </div> -->
         
         <button type="submit" class="btn btn-primary">Create</button>

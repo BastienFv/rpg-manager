@@ -27,7 +27,7 @@ class UserRequest extends FormRequest
     public function rules()
     {
         return [
-                'email' => 'required|string',
+                'email' => 'required|string|unique:users',
                 'password' => Password::min(8)
                     ->mixedCase()
                     ->numbers()
@@ -35,7 +35,7 @@ class UserRequest extends FormRequest
                     ->uncompromised(),
                 'firstname' => 'required|string',
                 'lastname' => 'required|string',
-                'pseudo' => 'required|string',
+                'pseudo' => 'required|string|unique:users',
         ];
         
     }

@@ -6,7 +6,9 @@
 
 
 @if(auth()->check())
-
+@if(session()->has('success'))
+<div class="alert alert-success">{{session()->get('success')}}</div>
+@endif
 <h1>Salut {{ auth()->user()->pseudo }} !</h1>
 <h2>Infos du compte : </h2>
 <label for="lastname">Nom : </label>

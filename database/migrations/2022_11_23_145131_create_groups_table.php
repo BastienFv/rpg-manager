@@ -21,7 +21,6 @@ return new class extends Migration
             $table->string('description');
             $table->integer('people')->default(0);
             $table->foreignIdFor(\App\Models\User::class, 'user_id')
-            ->nullable()
             ->constrained()
             ->onUpdate('RESTRICT')
             ->onDelete('RESTRICT');

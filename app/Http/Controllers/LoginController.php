@@ -43,7 +43,7 @@ class LoginController extends Controller
 
         if(Auth::attempt(["email" => $email, "password" => $password])) {
             $request->session()->regenerate();
-            return redirect()->route('profil');
+            return redirect()->route('profil')->with('success','Vous êtes connecté');
         }
 
         return redirect("login")->withErrors(['Email/mot de passe inconnu'])->withInput(); 

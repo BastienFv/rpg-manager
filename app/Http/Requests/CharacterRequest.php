@@ -24,7 +24,7 @@ class CharacterRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required |string|unique:character',
+            'name' => 'required |string|unique:characters',
             'description' => 'required|string',
             'class' => 'required|string',
         ];

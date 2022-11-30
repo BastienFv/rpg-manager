@@ -18,6 +18,9 @@
                             <p class="card-text">Name : {{ $character->name }}</p>
                             <p class="card-text">Description : {{ $character->description }}</p>
                             <p class="card-text">Class : {{ $character->class }}</p>
+                            <br>
+                            <p class="card-text">Crée le : {{ $character->created_at }}</p>
+                            <p class="card-text">Modifié le : {{ $character->updated_at }}</p>
                             <div class="d-flex justify-content-between align-items-center">  
                             </div>
                             @if(auth()->check())

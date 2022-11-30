@@ -22,6 +22,9 @@
                         <p class="card-text">Agility : {{ $character->agility }}</p>
                         <p class="card-text">Inteligence : {{ $character->inteligence }}</p>
                         <p class="card-text">PV : {{ $character->pv }}</p>
+                        <br>
+                        <p class="card-text">Crée le : {{ $character->created_at }}</p>
+                        <p class="card-text">Modifié le : {{ $character->updated_at }}</p>
 
                         <div class="d-flex justify-content-between align-items-center">
                             @if(auth()->user()->id === $character->user_id)

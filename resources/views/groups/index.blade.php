@@ -25,6 +25,7 @@
                     <td>{{ $group->name }}</td>
                     <td>{{ $group->description }}</td>
                     <td>{{ $group->people }}</td>
+                    
 
                     @if(auth()->check())
                     <td>

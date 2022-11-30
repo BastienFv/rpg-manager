@@ -14,6 +14,10 @@
                 <th>Description</th>
                 <th>Max People</th>
                 <th>Members</th>
+                <th>Created</th>
+                <th>Updated</th>
+                <th>Join</th>
+                <th></th>
                 <th></th>
             </tr>
             <tbody>
@@ -24,12 +28,13 @@
                     <td>{{ $group->description }}</td>
                     <td>{{ $group->people }}</td>
                     <td>{{ $group->character_id }} </td>
+                    <td>{{ $group->created_at }} </td>
+                    <td>{{ $group->updated_at }} </td>
                     <td>
                     <div class="d-flex justify-content-between align-items-center">
                         @if(auth()->user()->id)
-                        <form method="post" action="{{route('groups.join',$group->id)}}">
-                            @csrf
-                            @method('PUT')
+                        
+                        
                             <select class="form-select" name="class" aria-label="Default select example">
                                 <option selected>Choose your character</option>
                                 
@@ -40,12 +45,16 @@
                                 @endforeach
                             </select>
                             <button type="submit" class="btn btn-primary">Join</button>
-                        </form>
+           
                         
                         {{-- <a href="{{route('groups.join',$group->id)  }}" class="btn btn-sm btn-primary">Invite</a> --}}
                         @endif
+                        </td>
+                        <td>
                         @if(auth()->user()->id === $group->user_id)
                             <a href="{{ route('groups.edit', $group->id) }}" class="btn btn-sm btn-primary">Edit</a>
+                        </td>
+                        <td>
                             <form method="post" action="{{ route('groups.destroy', $group->id) }}">
                                 @csrf
                                 @method('DELETE')

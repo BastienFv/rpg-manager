@@ -7,8 +7,7 @@
 
     @if(auth()->check())
     
-    <h1>Salut {{ auth()->user()->pseudo }}</h1> 
-    
+
     @endif
     
     <div class="row justify-content-center">

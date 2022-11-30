@@ -60,7 +60,12 @@
             <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="PV" name="pv" value="{{-- {{ random_int(20, 50) }} --}}">
         </div> -->
         <br>
-        <button type="submit" class="btn btn-primary">Create</button>
+        <div class="row align-item-center">
+<div class="col text-center">
+
+    <button type="submit" class="btn btn-primary">Create</button>
+</div>
+        </div>
     </form>
 @endif
 @endsection

@@ -28,7 +28,11 @@
             <input type="number" class="form-control" id="exampleFormControlInput1" name="people" min="1" placeholder="People">
         </div>
         <br>
-        <button type="submit" class="btn btn-primary">Create</button>
-
+        <div class="row align-item-center">
+            <div class="col text-center">
+            
+                <button type="submit" class="btn btn-primary">Create</button>
+            </div>
+                    </div>
     </form>
 @endsection

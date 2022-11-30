@@ -5,9 +5,7 @@
 @section('content')
 
     <h1>All Groups</h1>
-
-  
-
+    @if(auth()->check())
     
     <table class="table table-dark table-striped">
         <thead>
@@ -39,4 +37,8 @@
             @endforeach
         </tbody>
     </table>
+    @else
+    <br>
+    <div class="alert alert-danger"> Vous n'êtes pas enregister/connecter !</div>
+    @endif
 @endsection

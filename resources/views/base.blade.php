@@ -45,6 +45,21 @@
         @yield('content')
       
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-        
+        <div class="container">
+            <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+              <p class="col-md-4 mb-0 text-muted">&copy; 2022 RPGCompany, LTD</p>
+          
+              <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+                <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
+              </a>
+          
+              <ul class="nav col-md-4 justify-content-end">
+                <li class="nav-item"><a href="/home" class="nav-link px-2 text-muted">Home</a></li>
+                <li class="nav-item"><a href="{{ route('profil') }}" class="nav-link px-2 text-muted">Account</a></li>
+                <li class="nav-item"><a href="{{ route('rpg.register') }}" class="nav-link px-2 text-muted">Register</a></li>
+                <li class="nav-item"><a href="{{ route('login') }}" class="nav-link px-2 text-muted">Login</a></li>
+              </ul>
+            </footer>
+          </div>
     </body>
 </html>

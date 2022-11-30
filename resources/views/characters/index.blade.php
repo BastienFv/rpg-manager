@@ -5,8 +5,8 @@
 @section('content')
 
     <h1>All Characters</h1>
-
-
+    @if(auth()->check())
+   
     <div class="container">
        
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
@@ -31,4 +31,9 @@
     </div>   
 
     <br />
+    
+    @else
+    <br>
+    <div class="alert alert-danger"> Vous n'êtes pas enregister/connecter !</div>
+    @endif
 @endsection

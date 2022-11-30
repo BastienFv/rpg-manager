@@ -12,10 +12,11 @@ class Recrut extends Model
     use SoftDeletes;
 
     protected $fillable =[
-        'response',
+        'accepted',
+        'accepted_at',
        ];
     
     private int $group_id;
     private int $character_id;
-    protected bool $response;
+    protected bool $accepted;
 }

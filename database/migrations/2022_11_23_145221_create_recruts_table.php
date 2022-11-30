@@ -16,8 +16,9 @@ return new class extends Migration
         Schema::create('recruts', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->timestamp('accepted_at')->nullable();
             $table->softDeletes();
-            $table->boolean('response');
+            $table->boolean('accepted')->default(0);
             $table->foreignIdFor(\App\Models\Group::class, 'group_id')
             ->constrained()
             ->onUpdate('RESTRICT')

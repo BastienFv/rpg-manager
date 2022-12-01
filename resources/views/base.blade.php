@@ -24,8 +24,8 @@
                             <a class="nav-link" href="{{ route('profil') }}">MY ACCOUNT</a>
                         @endif
                         @if(auth()->check())
-                        <a class="nav-link" href="{{ route('characters.create') }}">NEW CHARACTER</a>
-                    @endif
+                            <a class="nav-link" href="{{ route('characters.create') }}">NEW CHARACTER</a>
+                        @endif
                             <a class="nav-link" href="{{ route('characters.index') }}">CHARACTERS</a>
                         @if(auth()->check())
                             <a class="nav-link" href="{{ route('groups.create') }}">NEW GROUP</a>
@@ -60,6 +60,6 @@
                 <li class="nav-item"><a href="{{ route('login') }}" class="nav-link px-2 text-muted">Login</a></li>
               </ul>
             </footer>
-          </div>
+        </div>
     </body>
 </html>

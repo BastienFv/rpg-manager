@@ -13,8 +13,9 @@ class Recrut extends Model
 
     protected $fillable =[
         'accepted',
-        'accepted_at',
-       ];
+        'group_id',
+        'character_id'
+    ];
     
     private int $group_id;
     private int $character_id;

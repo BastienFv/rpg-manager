@@ -30,9 +30,8 @@
         <br>
         <div class="row align-item-center">
             <div class="col text-center">
-            
                 <button type="submit" class="btn btn-primary">Create</button>
             </div>
-                    </div>
+        </div>
     </form>
 @endsection

@@ -36,7 +36,7 @@
     <br />
     
     @else
-    <br>
-    <div class="alert alert-danger"> Vous n'êtes pas enregister/connecter !</div>
+        <br>
+        <div class="alert alert-danger"> Vous n'êtes pas enregister/connecter !</div>
     @endif
 @endsection

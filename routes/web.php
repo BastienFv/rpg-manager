@@ -40,11 +40,13 @@ Route::get('/profil',[LoginController::class,'profil'])->name('profil');
 Route::get('/logout',[LoginController::class,'logout'])->name('logout');
 
 Route::resource('/users', UserController::class);
-Route::resource('/characters', CharacterController::class);
-Route::resource('/groups', GroupController::class);
 
-Route::resource('/recrut',RecrutController::class);
+Route::resource('/characters', CharacterController::class);
+
+Route::resource('/groups', GroupController::class);
 
 Route::put('/characters/{character}/regenerate', [CharacterController::class, 'regenerate'])->name('characters.regenerate');
 
 Route::put('/characters/{character}/level', [CharacterController::class, 'level'])->name('characters.level');
+
+Route::resource('/recruts', RecrutController::class);

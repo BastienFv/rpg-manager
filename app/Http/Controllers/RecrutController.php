@@ -2,9 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\RecrutRequest;
+use App\Models\Character;
+use App\Models\Group;
+use App\Models\Recrut;
 use Illuminate\Http\Request;
 
-class UserController extends Controller
+class RecrutController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +17,9 @@ class UserController extends Controller
      */
     public function index()
     {
-        return view('users.index');
+        return view('recruts.index')->with([
+            'recruts' => Recrut::all()
+        ]);
     }
 
     /**
@@ -23,18 +29,25 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        return view('recruts.create')->with([
+            'group' => Group::all(),
+            'character' => Character::where('user_id',auth()->user()->id)->get()
+        ]);
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\RecrutRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(RecrutRequest $request)
     {
-        //
+        $data = $request->toArray();
+
+        Recrut::create($data);
+
+        return redirect()->route('recruts.index');
     }
 
     /**

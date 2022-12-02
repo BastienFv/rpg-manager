@@ -20,17 +20,27 @@
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
                         <a class="nav-link" href="/home">HOME</a>
+
                         @if(auth()->check())
                             <a class="nav-link" href="{{ route('profil') }}">MY ACCOUNT</a>
                         @endif
+
                         @if(auth()->check())
                             <a class="nav-link" href="{{ route('characters.create') }}">NEW CHARACTER</a>
                         @endif
+
                             <a class="nav-link" href="{{ route('characters.index') }}">CHARACTERS</a>
+    
                         @if(auth()->check())
                             <a class="nav-link" href="{{ route('groups.create') }}">NEW GROUP</a>
                         @endif
+                        
                             <a class="nav-link" href="{{ route('groups.index') }}">GROUPS</a>
+                        
+                        @if(auth()->check())
+                            <a class="nav-link" href="{{ route('recruts.create') }}">JOIN GROUP</a>
+                        @endif
+                            
                         @if(auth()->check())
                             <a href="{{ route('logout') }}" class="btn btn-outline-light me-2">Deconnexion</a>
                         @else

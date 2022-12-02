@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\GroupRequest;
 use App\Models\Character;
 use App\Models\Group;
+use App\Models\Recrut;
 use Illuminate\Http\Request;
 
 class GroupController extends Controller
@@ -56,22 +57,14 @@ class GroupController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Group $group)
+    public function show(Group $group, Recrut $recrut)
     {
         
         return view('groups.show')->with([
             'group' => $group,
-            'character' => Character::where('user_id',auth()->user()->id)->get()
+            'recrut' => $recrut
         ]);
         
-    }
-    public function join(GroupRequest $request,Group $group, Character $character)
-    {
-        $group->fill($request->toArray());
-        $group['character_id'] =  $character->id;
-        $group->save();
-
-        return redirect()->route('groups.index');
     }
 
     /**

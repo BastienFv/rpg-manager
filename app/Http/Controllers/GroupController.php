@@ -7,6 +7,7 @@ use App\Models\Character;
 use App\Models\Group;
 use App\Models\Recrut;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class GroupController extends Controller
 {
@@ -62,6 +63,10 @@ class GroupController extends Controller
         
         return view('groups.show')->with([
             'group' => $group,
+            'user'=> DB::table('characters')
+            ->leftJoin('recruts', 'characters.id', '=', 'recruts.character_id')
+->where('recruts.group_id','=',$group->id)
+            ->get()
             
         ]);
         

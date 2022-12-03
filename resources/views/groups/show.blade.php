@@ -27,7 +27,15 @@
                 <td>{{ $group->name }}</td>
                 <td>{{ $group->description }}</td>
                 <td>{{ $group->people }}</td>
-                <td>{{ $recrut->character_id }}</td>
+                <td> 
+                    @foreach($user as $member)
+                <li>
+                      {{$member->name}}
+                </li>
+                
+                    @endforeach
+                </td> {{-- ici je veux afficher les membres’ --}}
+                
                 <td>{{ $group->created_at }} </td>
                 <td>{{ $group->updated_at }} </td>
 

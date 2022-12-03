@@ -28,6 +28,8 @@
             <option value="Berserker">Berserker</option>
             <option value="Archer">Archer</option>
         </select>
+
+        <br />
         
         <button type="submit" class="btn btn-primary">Update</button>
 

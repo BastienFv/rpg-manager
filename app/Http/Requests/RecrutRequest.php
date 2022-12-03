@@ -25,7 +25,7 @@ class RecrutRequest extends FormRequest
     {
         return [
             'group_id' => 'required',
-            'character_id' => 'required'
+            'character_id' => 'required|unique:recruts'
         ];
     }
 }

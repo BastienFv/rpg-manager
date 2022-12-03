@@ -57,12 +57,12 @@ class GroupController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Group $group, Recrut $recrut)
+    public function show(Group $group)
     {
         
         return view('groups.show')->with([
             'group' => $group,
-            'recrut' => $recrut
+            
         ]);
         
     }

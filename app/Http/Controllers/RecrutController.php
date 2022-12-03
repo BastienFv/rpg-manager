@@ -47,7 +47,7 @@ class RecrutController extends Controller
 
         Recrut::create($data);
 
-        return redirect()->route('recruts.index');
+        return redirect()->route('groups.index')->with('success','Vous avez rejoint un groupe, Cliquer sur la view du groupe');;
     }
 
     /**

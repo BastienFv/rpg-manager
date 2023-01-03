@@ -1,3 +1,56 @@
+Objectifs :
+
+Développer une application web avec Laravel
+ 
+
+Sujet : 
+
+Au cours de ce mini-projet, vous allez développer en binôme une application web de gestion pour jeu de rôle. 
+
+ 
+
+Cette application doit proposer les fonctionnalités suivantes :
+
+
+1. L'utilisateur (joueur) peut se connecter et s'inscrire, en utilisant une adresse email et un mot de passe de minimum 8 caractères et comportant une lettre, un chiffre et un symbole. Lors de l'inscription, l'utilisateur doit également saisir son prénom, son nom et choisir un pseudo unique.
+
+
+2. Le joueur peut créer un personnage en saisissant un nom, une description et en choississant une spécialité parmi les suivantes : "Guerrier", "Mage", "Druide", "Assassin", "Berserker", "Archer".
+
+Lors de la création, les personnages doivent se voir attribuer des valeurs (statistiques) aléatoire comprises entre 0 et 14 pour chaque caractéristique: MAG (Magie), FOR (Force), AGI (Agilité), INT (intelligence). Il doivent également se voir attribuer un nombre de points de vie (PV) compris entre 20 et 50.
+
+Le joueur ne peut pas modifier manuellement les valeurs statistiques ou les PV. Il peut relancer une génération aléatoire autant de fois qu'il le souhaite avant de valider le personnage. (Ainsi il peut choisir la spécialité appropriée.)
+
+ 
+
+3. Le joueur peut consulter, modifier et supprimer ses personnages, cependant les statistiques et PV ne peuvent pas être modifiées.
+
+ 
+
+4. Le joueur doit pouvoir créer, consulter, modifier et supprimer des groupes en leur donnant un nom, une description et une nombre de places. Chaque groupe pourra contenir plusieurs personnage.
+
+Pour cela, le joueur peut ajouter ou supprimer des personnages qu'il a créé au sein du groupe.
+
+ 
+
+5. Le joueur doit pouvoir consulter les personnages des autres joueurs sous forme d'un "catalogue" général. Il doit pouvoir filtrer les personnages par spécialité, par joueur ou effectuer une recherche par nom.
+
+ 
+
+6. Le joueur doit pouvoir inviter un personnage d'un autre joueur dans un équipe, le joueur ayant créé ce personnage pourra alors accepter ou refuser de rejoindre l'équipe. Une fois que son personnage a rejoint une équipe, il doit pouvoir consulter les détails de l'équipe depuis son espace sans pour autant pouvoir la modifier.
+
+ 
+
+BONUS:
+
+- Ajouter un upload d'image pour chaque personnage.
+
+- Ajouter un bouton permettant d'augmenter le niveau d'un personnage (cela lui donne +5 PV et aléatoirement entre 0 et 2 points supplémentaires par statistique).
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
